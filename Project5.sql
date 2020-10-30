@@ -269,6 +269,7 @@ WHERE returned_date IS NULL
 GO
 
 --Project 5 starts here
+/*			Disk			*/
 DROP PROC IF EXISTS sp_ins_disk;
 GO
 CREATE PROC sp_ins_disk
@@ -283,7 +284,7 @@ BEGIN CATCH
 	PRINT 'Message: ' + CONVERT(varchar(200), ERROR_MESSAGE());
 END CATCH
 GO
-GRANT EXEC sp_ins_disk TO diskUserJS		
+GRANT EXECUTE ON sp_ins_disk TO diskUserJS		
 GO
 EXEC sp_ins_disk 'Countdown to Extinction', '7-20-1993', 1, 1, 1;
 GO
@@ -310,7 +311,7 @@ UPDATE [dbo].[disk]
 	PRINT 'Message: ' + CONVERT(varchar(200), ERROR_MESSAGE());
 END CATCH
 GO
-GRANT EXEC sp_upd_disk TO diskUserJS
+GRANT EXECUTE ON sp_upd_disk TO diskUserJS
 GO
 EXEC sp_upd_disk 21, 'Countdown to Extinction', '7-14-1993', 1, 1, 1;  --release date updates
 GO
@@ -332,9 +333,149 @@ END TRY
 	PRINT 'Message: ' + CONVERT(varchar(200), ERROR_MESSAGE());
 END CATCH
 GO
-GRANT EXEC sp_del_disk TO diskUserJS
+GRANT EXECUTE ON sp_del_disk TO diskUserJS
 GO
 EXEC sp_del_disk 21;
 GO
-EXEC sp_del_disk 'XXX';
+EXEC sp_del_disk 21;
+GO
+
+/*			Artist			*/
+DROP PROC IF EXISTS sp_ins_artist;
+GO
+CREATE PROC sp_ins_artist
+	@artist_name nvarchar(60), @description nvarchar(60), @artist_type_id int
+AS
+BEGIN TRY
+	INSERT artist (artist_name, description, artist_type_id)
+	VALUES (@artist_name, @description, @artist_type_id)
+END TRY
+BEGIN CATCH
+	PRINT 'An error occured.';
+	PRINT 'Message: ' + CONVERT(varchar(200), ERROR_MESSAGE());
+END CATCH
+GO
+GRANT EXECUTE ON sp_ins_disk TO diskUserJS		
+GO
+EXEC sp_ins_artist 'Megadeth', 'Metallicas old Nemesis', 1;
+GO
+EXEC sp_ins_artist 'Megadeth', 'Metallicas old Nemesis', NULL;
+GO
+
+--update artist stored procedure
+DROP PROC IF EXISTS sp_upd_artist;
+GO
+CREATE PROC sp_upd_artist
+	@artist_name nvarchar(60), @description nvarchar(60), @artist_type_id int
+AS
+BEGIN TRY
+UPDATE [dbo].[artist]
+   SET [artist_name] = 'Megadeth'
+      ,[description] = 'Metallicas old Nemesis'
+      ,[artist_type_id] = 2
+ WHERE artist_name = @artist_name
+ END TRY
+ BEGIN CATCH
+	PRINT 'An error occured.';
+	PRINT 'Message: ' + CONVERT(varchar(200), ERROR_MESSAGE());
+END CATCH
+GO
+GRANT EXECUTE ON sp_upd_artist TO diskUserJS
+GO
+EXEC sp_upd_artist 'Megadeth', 'Metallicas old Nemesis', 2;  --artist type id updates
+GO
+EXEC sp_upd_artist 'Megadeth', 'Metallicas old Nemesis', NULL;
+GO
+
+--Create delete artist procedure
+DROP PROC IF EXISTS sp_del_artist;
+GO
+CREATE PROC sp_del_artist
+	@artist_id int
+AS
+BEGIN TRY
+DELETE FROM [dbo].[artist]
+      WHERE artist_id = @artist_id
+END TRY
+ BEGIN CATCH
+	PRINT 'An error occured.';
+	PRINT 'Message: ' + CONVERT(varchar(200), ERROR_MESSAGE());
+END CATCH
+GO
+GRANT EXECUTE ON sp_del_artist TO diskUserJS
+GO
+EXEC sp_del_artist 21;
+GO
+EXEC sp_del_artist 21;
+GO
+
+/*			Borrower			*/
+DROP PROC IF EXISTS sp_ins_borrower;
+GO
+CREATE PROC sp_ins_borrower
+	@fname nvarchar(60), @lname nvarchar(60), @phone_num varchar(15)
+AS
+BEGIN TRY
+	INSERT borrower(fname, lname, phone_num)
+	VALUES (@fname, @lname, @phone_num)
+END TRY
+BEGIN CATCH
+	PRINT 'An error occured.';
+	PRINT 'Message: ' + CONVERT(varchar(200), ERROR_MESSAGE());
+END CATCH
+GO
+GRANT EXECUTE ON sp_ins_borrower TO diskUserJS		
+GO
+EXEC sp_ins_borrower 'Joe','Gilgun','555-555-8521';
+GO
+EXEC sp_ins_borrower 'Joe','Gilgun', NULL;
+GO
+
+--update artist stored procedure
+DROP PROC IF EXISTS sp_upd_borrower;
+GO
+CREATE PROC sp_upd_borrower
+	@fname nvarchar(60), @lname nvarchar(60), @phone_num varchar(15)
+AS
+BEGIN TRY
+UPDATE [dbo].[borrower]
+   SET [fname] = 'Joseph'
+      ,[lname] = 'Gilgun'
+      ,[phone_num] = '555-555-8521'
+ WHERE phone_num = @phone_num
+ END TRY
+ BEGIN CATCH
+	PRINT 'An error occured.';
+	PRINT 'Message: ' + CONVERT(varchar(200), ERROR_MESSAGE());
+END CATCH
+GO
+GRANT EXECUTE ON sp_upd_borrower TO diskUserJS
+GO
+EXEC sp_upd_borrower 'Joeseph','Gilgun','555-555-8521';  --fname updates
+GO
+EXEC sp_upd_borrower 'Joseph', NULL , '555-555-8521';
+GO
+
+--Create delete artist procedure
+DROP PROC IF EXISTS sp_del_borrower;
+GO
+CREATE PROC sp_del_borrower
+	@borrower_id int
+AS
+BEGIN TRY
+DELETE FROM [dbo].[borrower]
+      WHERE borrower_id = @borrower_id
+END TRY
+ BEGIN CATCH
+	PRINT 'An error occured.';
+	PRINT 'Message: ' + CONVERT(varchar(200), ERROR_MESSAGE());
+END CATCH
+GO
+GRANT EXECUTE ON sp_del_borrower TO diskUserJS
+GO
+EXEC sp_del_borrower 20;
+GO
+EXEC sp_del_borrower 21;
+GO
+EXEC sp_del_borrower 21;
 GO
