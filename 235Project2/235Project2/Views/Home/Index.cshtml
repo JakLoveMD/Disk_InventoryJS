@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Disk Iventory";
+}
+@* ********************************************************************** *@
+@* Nov 13, 2020     -Added manage links for artists, disks, and borrowers *@
+@* ********************************************************************** *@
+<div class="text-center">
+    <h1 class="display-4">Welcome to Disk Inventory Support</h1>
+    <p>Inventory management software for the music enthusiast.</p>
+    <h1>Admin</h1>
+    <div class="list-group">
+        <a asp-controller="Artist" asp-action="List" class="list-group-item">Manage Artist</a>
+        <a asp-controller="Disk" asp-action="List" class="list-group-item">Manage Disks</a>
+        <a asp-controller="Borrower" asp-action="List" class="list-group-item">Manage Borrowers</a>
+    </div>
+</div>

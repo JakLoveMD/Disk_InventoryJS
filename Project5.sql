@@ -384,7 +384,7 @@ GRANT EXECUTE ON sp_upd_artist TO diskUserJS
 GO
 EXEC sp_upd_artist 'Megadeth', 'Metallicas old Nemesis', 2;  --artist type id updates
 GO
-EXEC sp_upd_artist 'Megadeth', 'Metallicas old Nemesis', NULL;
+EXEC sp_upd_artist NULL , 'Metallicas old Nemesis', NULL;
 GO
 
 --Create delete artist procedure
