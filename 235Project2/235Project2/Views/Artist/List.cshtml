@@ -4,6 +4,7 @@
 }
 <h1>@ViewBag.Title</h1>
 
+<a asp-controller="Artist" asp-action="Add">Add New Artist</a>
 @if (Model.Count() > 0)
 {
     <table class="table table-bordered table-striped">
@@ -13,6 +14,7 @@
                 <th>Artist Name</th>
                 <th>Description</th>
                 <th>Artist Type ID</th>
+                <th>Edit + Delete</th>
             </tr>
         </thead>
             <tbody>
@@ -23,6 +25,10 @@
                         <td>@artist.ArtistName</td>
                         <td>@artist.Description</td>
                         <td>@artist.ArtistTypeId</td>
+                        <td>
+                            <a asp-controller="Artist" asp-action="Edit" asp-route-id="@artist.ArtistId">Edit</a>
+                            <a asp-controller="Artist" asp-action="Delete" asp-route-id="@artist.ArtistId">Delete</a>
+                        </td>
                     </tr>
                 }
             </tbody>

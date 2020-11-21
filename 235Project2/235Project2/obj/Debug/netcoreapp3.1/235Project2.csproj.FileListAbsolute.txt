@@ -69,3 +69,9 @@ C:\Users\JSutherland\Downloads\Labs\Projects\DiskINV\Disk_InventoryJS\235Project
 C:\Users\JSutherland\Downloads\Labs\Projects\DiskINV\Disk_InventoryJS\235Project2\235Project2\obj\Debug\netcoreapp3.1\Razor\Views\Artist\List.cshtml.g.cs
 C:\Users\JSutherland\Downloads\Labs\Projects\DiskINV\Disk_InventoryJS\235Project2\235Project2\obj\Debug\netcoreapp3.1\Razor\Views\Borrower\List.cshtml.g.cs
 C:\Users\JSutherland\Downloads\Labs\Projects\DiskINV\Disk_InventoryJS\235Project2\235Project2\obj\Debug\netcoreapp3.1\Razor\Views\Disk\List.cshtml.g.cs
+C:\Users\JSutherland\Downloads\Labs\Projects\DiskINV\Disk_InventoryJS\235Project2\235Project2\obj\Debug\netcoreapp3.1\Razor\Views\Artist\Delete.cshtml.g.cs
+C:\Users\JSutherland\Downloads\Labs\Projects\DiskINV\Disk_InventoryJS\235Project2\235Project2\obj\Debug\netcoreapp3.1\Razor\Views\Artist\Edit.cshtml.g.cs
+C:\Users\JSutherland\Downloads\Labs\Projects\DiskINV\Disk_InventoryJS\235Project2\235Project2\obj\Debug\netcoreapp3.1\Razor\Views\Borrower\Edit.cshtml.g.cs
+C:\Users\JSutherland\Downloads\Labs\Projects\DiskINV\Disk_InventoryJS\235Project2\235Project2\obj\Debug\netcoreapp3.1\Razor\Views\Borrower\Delete.cshtml.g.cs
+C:\Users\JSutherland\Downloads\Labs\Projects\DiskINV\Disk_InventoryJS\235Project2\235Project2\obj\Debug\netcoreapp3.1\Razor\Views\Disk\Delete.cshtml.g.cs
+C:\Users\JSutherland\Downloads\Labs\Projects\DiskINV\Disk_InventoryJS\235Project2\235Project2\obj\Debug\netcoreapp3.1\Razor\Views\Disk\Edit.cshtml.g.cs
