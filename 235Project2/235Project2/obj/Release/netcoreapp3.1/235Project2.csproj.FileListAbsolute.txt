@@ -69,3 +69,9 @@ C:\Users\JSutherland\Downloads\Labs\Projects\DiskINV\Disk_InventoryJS\235Project
 C:\Users\JSutherland\Downloads\Labs\Projects\DiskINV\Disk_InventoryJS\235Project2\235Project2\obj\Release\netcoreapp3.1\235Project2.dll
 C:\Users\JSutherland\Downloads\Labs\Projects\DiskINV\Disk_InventoryJS\235Project2\235Project2\obj\Release\netcoreapp3.1\235Project2.pdb
 C:\Users\JSutherland\Downloads\Labs\Projects\DiskINV\Disk_InventoryJS\235Project2\235Project2\obj\Release\netcoreapp3.1\235Project2.genruntimeconfig.cache
+C:\Users\JSutherland\Downloads\Labs\Projects\DiskINV\Disk_InventoryJS\235Project2\235Project2\obj\Release\netcoreapp3.1\Razor\Views\Artist\Delete.cshtml.g.cs
+C:\Users\JSutherland\Downloads\Labs\Projects\DiskINV\Disk_InventoryJS\235Project2\235Project2\obj\Release\netcoreapp3.1\Razor\Views\Artist\Edit.cshtml.g.cs
+C:\Users\JSutherland\Downloads\Labs\Projects\DiskINV\Disk_InventoryJS\235Project2\235Project2\obj\Release\netcoreapp3.1\Razor\Views\Borrower\Delete.cshtml.g.cs
+C:\Users\JSutherland\Downloads\Labs\Projects\DiskINV\Disk_InventoryJS\235Project2\235Project2\obj\Release\netcoreapp3.1\Razor\Views\Borrower\Edit.cshtml.g.cs
+C:\Users\JSutherland\Downloads\Labs\Projects\DiskINV\Disk_InventoryJS\235Project2\235Project2\obj\Release\netcoreapp3.1\Razor\Views\Disk\Delete.cshtml.g.cs
+C:\Users\JSutherland\Downloads\Labs\Projects\DiskINV\Disk_InventoryJS\235Project2\235Project2\obj\Release\netcoreapp3.1\Razor\Views\Disk\Edit.cshtml.g.cs
