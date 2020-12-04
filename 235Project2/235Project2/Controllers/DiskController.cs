@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using _235Project2.Models;
 
 namespace _235Project2.Controllers
@@ -16,7 +17,7 @@ namespace _235Project2.Controllers
         }
         public IActionResult List()
         {
-            List<Disk> disk = context.Disk.OrderBy(a => a.DiskName).ToList();
+            List<Disk> disk = context.Disk.OrderBy(a => a.DiskName).Include(g => g.Genre).Include(s => s.Status).Include(t =>t.DiskType).ToList();
             return View(disk);
         }
         [HttpGet]

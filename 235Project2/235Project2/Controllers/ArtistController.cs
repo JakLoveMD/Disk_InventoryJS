@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using _235Project2.Models;
 
 namespace _235Project2.Controllers
@@ -16,7 +17,7 @@ namespace _235Project2.Controllers
         }
         public IActionResult List()
         {
-            List<Artist> artists = context.Artist.OrderBy(a => a.ArtistName).ToList();
+            List<Artist> artists = context.Artist.OrderBy(a => a.ArtistName).Include(t => t.ArtistType).ToList();
             return View(artists);
         }
         [HttpGet]

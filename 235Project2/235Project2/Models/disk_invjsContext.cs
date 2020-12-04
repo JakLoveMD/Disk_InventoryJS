@@ -163,10 +163,12 @@ namespace _235Project2.Models
 
             modelBuilder.Entity<DiskHasBorrower>(entity =>
             {
-                entity.HasKey(e => new { e.BorrowerId, e.DiskId })
-                    .HasName("PK__disk_has__EE13A6065AC20B41");
+                //entity.HasKey(e => new { e.BorrowerId, e.DiskId })
+                //    .HasName("PK__disk_has__EE13A6065AC20B41");
 
                 entity.ToTable("disk_has_borrower");
+
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.BorrowerId).HasColumnName("borrower_id");
 
