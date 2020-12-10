@@ -17,7 +17,7 @@
     <div>
         <label asp-for="GenreId">Genre</label>
         <select asp-for="GenreId" class="form-control">
-            <option value="">select a type</option>
+            <option value="Select a Genre">Select a Genre</option>
             @foreach (Genre t in ViewBag.GenreTypes)
             {
                 <option value="@t.GenreId">@t.Description</option>
@@ -27,7 +27,7 @@
     <div>
         <label asp-for="StatusId">Status</label>
         <select asp-for="StatusId" class="form-control">
-            <option value="">select a status</option>
+            <option value="Select a Status">Select a Status</option>
             @foreach (Status a in ViewBag.StatusTypes)
             {
                 <option value="@a.StatusId">@a.Description</option>
@@ -37,7 +37,7 @@
     <div>
         <label asp-for="DiskTypeId">Disk Type</label>
         <select asp-for="DiskTypeId" class="form-control">
-            <option value="">select a status</option>
+            <option value="Select a Type">Select a Type</option>
             @foreach (DiskType b in ViewBag.DiskTypes)
             {
                 <option value="@b.DiskTypeId">@b.Description</option>

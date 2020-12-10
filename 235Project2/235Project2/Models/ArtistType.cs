@@ -9,7 +9,6 @@ namespace _235Project2.Models
         {
             Artist = new HashSet<Artist>();
         }
-
         public int ArtistTypeId { get; set; }
         public string Description { get; set; }
 

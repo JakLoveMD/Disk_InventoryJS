@@ -11,7 +11,7 @@
     <div>
         <label asp-for="DiskId">Disk</label>
         <select asp-for="DiskId" class="form-control">
-            <option value="">Select a Disk</option>
+            <option value="Select a Disk">Select a Disk</option>
             @foreach (Disk d in ViewBag.Disks)
             {
                 <option value="@d.DiskId">@d.DiskName</option>
@@ -21,7 +21,7 @@
     <div>
         <label asp-for="BorrowerId">Borrowers</label>
         <select asp-for="BorrowerId" class="form-control">
-            <option value="">Select a Borrower</option>
+            <option value="Select a Borrower">Select a Borrower</option>
             @foreach (Borrower b in ViewBag.Borrowers)
             {
                 <option value="@b.BorrowerId">@b.Lname, @b.Fname</option>
